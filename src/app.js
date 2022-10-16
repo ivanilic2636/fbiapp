@@ -29,7 +29,6 @@ app.get("/input-record", async (req, res) => {
   let caseTitle = title.toUpperCase();
   let contactPhone = checkPhone(number);
   let recordData = await checkRecord(caseTitle);
-    console.log(recordData.record);
   if (contactPhone.isValid && recordData.record) {
     witnessData.phoneNumber = contactPhone.phoneNumber;
     witnessData.country = contactPhone.countryIso3;

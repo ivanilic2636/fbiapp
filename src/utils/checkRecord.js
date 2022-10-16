@@ -6,18 +6,17 @@ const checkRecord = async (data) => {
       json: true,
     });
     let allRecords = response.body.items;
-    let findRecord = allRecords.find(record => {
+    let findRecord = allRecords.find((record) => {
       //if the title is unique than we can maybe use include otherwise if we want to be precise we would use record.title == data
-        if(record.title.includes(data)){
-            return record
-        }
-    })      
-    if(findRecord){
-        return {record: findRecord}
-    }else{
-       return {record: false}
+      if (record.title.includes(data)) {
+        return record;
+      }
+    });
+    if (findRecord) {
+      return { record: findRecord };
+    } else {
+      return { record: false };
     }
-     
   } catch (error) {
     return error.message;
   }

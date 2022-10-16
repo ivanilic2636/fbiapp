@@ -1,30 +1,30 @@
-.main-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    max-width: 500px;
-    margin: 5% auto;
-    background-color: #324d64;
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 5% auto;
+  background-color: #324d64;
 }
 
-.witness-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 15px;
+.witness-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
 }
-.main-content h3{
-    color: white;
-}
-
-.main-content p{
-    color: white;
-    margin-top: 0;
+.main-content h3 {
+  color: white;
 }
 
-.fbi-logo{
-    width: 300px;
-    height: 300px;
+.main-content p {
+  color: white;
+  margin-top: 0;
+}
+
+.fbi-logo {
+  width: 300px;
+  height: 300px;
 }
