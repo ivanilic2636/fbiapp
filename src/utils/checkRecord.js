@@ -5,10 +5,10 @@ const checkRecord = async (data) => {
     const response = await got("https://api.fbi.gov/wanted/v1/list", {
       json: true,
     });
-    let allRecords = response.body.items;
-    let findRecord = allRecords.find((record) => {
-      //if the title is unique than we can maybe use include otherwise if we want to be precise we would use record.title == data
-      if (record.title.includes(data)) {
+    const allRecords = response.body.items;
+    const findRecord = allRecords.find((record) => {
+      //if the title is unique than we can maybe use include otherwise if we want to be precise we would use record.title === data
+      if (record.title === data) {
         return record;
       }
     });

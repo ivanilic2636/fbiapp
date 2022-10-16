@@ -4,13 +4,13 @@ const number = witnessForm.querySelector(".phone-number");
 const message = document.querySelector(".message");
 
 const caseRecordFunction = async () => {
-  let caseTitle = title.value;
-  let witnessNumber = number.value;
+  const caseTitle = title.value;
+  const witnessNumber = number.value;
   if (caseTitle !== "" && witnessNumber) {
     const getData = await fetch(
       `/input-record?title=${caseTitle}&number=${witnessNumber}`
     );
-    let data = await getData.json();
+    const data = await getData.json();
     message.textContent = data.message;
     title.value = "";
     number.value = "";
@@ -19,7 +19,7 @@ const caseRecordFunction = async () => {
   }
 };
 
-witnessForm.addEventListener("submit", (e) => {
+witnessForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  caseRecordFunction();
+  await caseRecordFunction();
 });
