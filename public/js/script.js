@@ -7,13 +7,19 @@ const caseRecordFunction = async () => {
   const caseTitle = title.value;
   const witnessNumber = number.value;
   if (caseTitle !== "" && witnessNumber) {
-    const getData = await fetch(
-      `/input-record?title=${caseTitle}&number=${witnessNumber}`
-    );
-    const data = await getData.json();
-    message.textContent = data.message;
-    title.value = "";
-    number.value = "";
+    try {
+      const getData = await fetch(
+        `/input-record?title=${caseTitle}&number=${encodeURIComponent(
+          witnessNumber
+        )}`
+      );
+      const data = await getData.json();
+      message.textContent = data.message;
+      title.value = "";
+      number.value = "";
+    } catch (e) {
+      return message.textContent = "Something went wrong";
+    }
   } else {
     message.textContent = "Please enter all fields";
   }

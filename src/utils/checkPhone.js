@@ -1,7 +1,7 @@
 const { phone } = require("phone");
 
 const checkPhone = (number) => {
-  const phoneObj = phone("+" + number.replace(/\D/g, ""));
+  const phoneObj = phone(number);
   return phoneObj;
 };
 

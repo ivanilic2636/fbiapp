@@ -9,7 +9,8 @@ router.get("/input-record", async (req, res) => {
   const { title, number } = req.query;
   const witnessData = {};
   const caseTitle = title.toUpperCase();
-  const contactPhone = checkPhone(number);
+  const decodedNumber = decodeURIComponent(number);
+  const contactPhone = checkPhone(decodedNumber);
   const recordData = await checkRecord(caseTitle);
   if (contactPhone.isValid && recordData.record) {
     witnessData.phoneNumber = contactPhone.phoneNumber;
